@@ -1,13 +1,10 @@
-"""
-@author: Pragadeesh
-"""
 import numpy as np
 import cv2
 import time
 
 print("Reading the image....")
 time.sleep(1)
-img=cv2.imread('C:/Users/Pragadeesh/Desktop/Resolute Ai/Task_3.jpeg')
+img=cv2.imread('Task_3.jpeg')
 
 #Convert to grey scale
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -32,6 +29,7 @@ inv = cv2.bitwise_not(img_pro)
 
 print("Counting the number of pipes....")
 time.sleep(1)
+
 #Labeling and counting
 ret, labels = cv2.connectedComponents(inv)
 label_hue = np.uint8(179 * labels / np.max(labels))
